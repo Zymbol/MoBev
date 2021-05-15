@@ -10,8 +10,5 @@
         }
 ?>
         <!-- <h1 style="text-align: center;">Welcome<br><br><br><br></h1> -->
-        </div>
-        
-            <img style="width:100%;" src="./images/meme.jpg">
-        
+        </div>        
     </body>

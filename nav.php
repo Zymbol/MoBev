@@ -1,5 +1,5 @@
 <nav style="text-align: center;" class="navbar navbar-expand-lg navbar-light bg-light">
-    <a href="./home.php"><img class="logo"src="./images/logo.png">
+    <a  href="./home.php"><img class="logo"src="./images/logo.png">
     </a>
    
   

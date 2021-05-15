@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 include "connect.php";
 include "nav.php";
 include "header.php";?>
-<div class="container-md" style="display: inline-block;">
+<div class="container-md" data-aos="fade-up" style="display: inline-block;">
 <div class="container-md" style="text-align: center;"><hr><h3>Matchbook Reserve Chardonnay</h3><hr></div>
 <?php $result = $conn->query("SELECT * FROM WINE WHERE WINE_ID=4"); ?>
 <form method="POST">
@@ -28,5 +28,8 @@ include "header.php";?>
         <!-- </div> -->
     </div>
     </form>
+    
+</script>
 <?php endwhile;
-    $result->free();?>
+    $result->free();
+    include "./footer.php";?>

@@ -2,14 +2,17 @@
 <?php 
 error_reporting(E_ALL);
 include "connect.php";
-include "nav.php";
+?>
+<div data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom"><?php include "nav.php";?></div>
+<?php
 include "header.php";?>
 <div class="container-md" style="display: inline-block;">
-<div class="container-md" style="text-align: center;"><hr><h3>WINE LIST</h3><hr></div>
+<div class="container-md" style="text-align: center;"><hr><h3 data-aos="fade-down">WINE LIST</h3><hr></div>
 <?php $result = $conn->query("SELECT * FROM WINE WHERE WINE_ID=1"); ?>
 <form class="container text-center" method="POST">
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="zoom-out-up">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -36,7 +39,7 @@ include "header.php";?>
 <?php endwhile; $result->free();?>
 <?php $result = $conn->query("SELECT * FROM WINE WHERE WINE_ID=2"); ?>
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="zoom-out-down">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -63,7 +66,7 @@ include "header.php";?>
 <?php endwhile; $result->free();?>
     <?php $result = $conn->query("SELECT * FROM WINE WHERE WINE_ID=3"); ?>
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="zoom-out-up">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -91,7 +94,7 @@ include "header.php";?>
     $result->free();?>
     <?php $result = $conn->query("SELECT * FROM WINE WHERE WINE_ID=4"); ?>
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="zoom-out-down">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -119,7 +122,7 @@ include "header.php";?>
     $result->free();?>
     <?php $result = $conn->query("SELECT * FROM WINE WHERE WINE_ID=5"); ?>
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="zoom-out-up">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -147,7 +150,7 @@ include "header.php";?>
     $result->free();?>
     <?php $result = $conn->query("SELECT * FROM WINE WHERE WINE_ID=6"); ?>
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="zoom-out-down">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">

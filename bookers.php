@@ -28,4 +28,5 @@ include "header.php";?>
     </div>
     </form>
 <?php endwhile;
-    $result->free();?>
+    $result->free();
+    include "./footer.php"?>

@@ -1,15 +1,20 @@
 <div class="container-md">
 <?php 
 error_reporting(E_ALL);
-include "connect.php";
-include "nav.php";
+include "connect.php";?>
+<div data-aos="zoom-out-down"
+     data-aos-anchor-placement="top-bottom">
+<?php
+include "nav.php";?>
+</div>
+<?php
 include "header.php";?>
 <div class="container-md" style="display: inline-block;">
-<div class="container-md" style="text-align: center;"><hr><h3>SPIRITS</h3><hr></div>
+<div class="container-md" style="text-align: center;"><hr data-aos="zoom-out-up" data-aos-duration="1500"><h3 data-aos="fade-left">SPIRITS</h3><hr data-aos="zoom-out-up" data-aos-duration="1500"></div>
 <?php $result = $conn->query("SELECT * FROM SPIRIT WHERE SPIRIT_SKU=1"); ?>
 <form class="container text-center" method="POST">
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="fade-right">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -36,7 +41,7 @@ include "header.php";?>
 <?php $result = $conn->query("SELECT * FROM SPIRIT WHERE SPIRIT_SKU=2"); ?>
 <form class="container text-center" method="POST">
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="fade-right">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -63,7 +68,7 @@ include "header.php";?>
 <?php $result = $conn->query("SELECT * FROM SPIRIT WHERE SPIRIT_SKU=3"); ?>
 <form class="container text-center" method="POST">
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="fade-left">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -90,7 +95,7 @@ include "header.php";?>
 <?php $result = $conn->query("SELECT * FROM SPIRIT WHERE SPIRIT_SKU=4"); ?>
 <form class="container text-center" method="POST">
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="fade-right">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -117,7 +122,7 @@ include "header.php";?>
 <?php $result = $conn->query("SELECT * FROM SPIRIT WHERE SPIRIT_SKU=5"); ?>
 <form class="container text-center" method="POST">
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="fade-up">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -144,7 +149,7 @@ include "header.php";?>
 <?php $result = $conn->query("SELECT * FROM SPIRIT WHERE SPIRIT_SKU=6"); ?>
 <form class="container text-center" method="POST">
 <?php while ($row = $result->fetch_assoc()): ?>          
-    <div class="carousel-inner py-4">
+    <div class="carousel-inner py-4" data-aos="fade-right">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">

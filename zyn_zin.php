@@ -30,3 +30,6 @@ include "header.php";?>
     </form>
 <?php endwhile;
     $result->free();?>
+<div class="container-fluid">
+    <?php include "./footer.php";?>
+</div>

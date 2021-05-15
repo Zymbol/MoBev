@@ -1,4 +1,4 @@
-<div class="container-md">
+<div class="container-fluid" >
 <?php 
 error_reporting(E_ALL);
 include "connect.php";
@@ -12,7 +12,7 @@ $result = $conn->query("SELECT * FROM WINE");
 $i = 0;
 // Establish the output variable
 $dyn_table = '<table border="1" cellpadding="25">';
-while ($row = $result->fetch_assoc()):{ 
+while ($row = $result->fetch_assoc()): 
     
     $img = $row["IMAGE"];
     $brand = $row["BRAND"];
@@ -50,7 +50,8 @@ while ($row = $result->fetch_assoc()):{
         '</div></div></td>';
     }
     $i++;
-}
+
 endwhile;
 $dyn_table .= '</tr></table>';
 echo $dyn_table; ?>
+</div>
