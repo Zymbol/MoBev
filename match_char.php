@@ -28,8 +28,7 @@ include "header.php";?>
         <!-- </div> -->
     </div>
     </form>
-    
-</script>
+
 <?php endwhile;
     $result->free();
     include "./footer.php";?>
