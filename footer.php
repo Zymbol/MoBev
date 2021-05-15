@@ -1,6 +1,6 @@
 <footer>
-    <div class="text-center p-3" style="box-shadow: 0 6px 150px 0 #000; font-family: 'Nanum Myeongjo', serif; color:#535353; height:3em">
-        <p><i><b><?php echo PAGE_TITLE?></b></i></p>
+    <div class="text-center p-3" style="font-family: 'Nanum Myeongjo', serif; color:#535353; height:3em">
+        <p><b><?php echo PAGE_TITLE?></b></p>
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- Popper.JS -->
