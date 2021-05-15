@@ -26,7 +26,7 @@ while ($row = $result->fetch_assoc()):?>
     <h3><?=$row['BRAND'] . " " . $row['LINE'] . "<br>" . $row['TYPE'] . "<br>"?></h3>
     <p>
     <strike style="color:red">$<?=$row['OLD_PRICE']?></strike>  $<?=$row['PRICE']?><br>
-        
+       
     </p>
     <a href="<?= $row['LINK']?>" class="btn btn-primary">View Item</a>
 </div>
