@@ -15,6 +15,7 @@
         <li class="nav-item active"><a href="./wineSelection.php">Our Wine Selection</a></li>        
         <!-- <li class="nav-item"><a href="./wineList.php">Wines</a></li> -->
         <li class="nav-item"><a href="./spiritSelection.php">Our Spirits</a></li>
+        <li class="nav-item"><a href="./beerSelection.php">Our Beer & Hard Seltzers</a></li>
         <li class="nav-item"><a href="about.php">About</a></li>
         <li class="nav-item">
             <div class="dropdown">

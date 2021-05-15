@@ -7,24 +7,35 @@ include "connect.php";?>
 include "nav.php";?>
 </div>
 <?php
-include "header.php";
-$result = $conn->query("SELECT * FROM SPIRIT WHERE SPIRIT_SKU=1"); 
-while ($row = $result->fetch_assoc()):
+include "header.php";?>
+<div class="container-md" style="text-align: center;">
+    <hr data-aos="zoom-out-up" data-aos-duration="1500">
+        <h3 data-aos="fade-left">BEER & HARD SELTZER</h3>
+    <hr data-aos="zoom-out-up" data-aos-duration="1500">
+</div>
 
+<!-- Main -->
+<main class="container" style="overflow-y: hidden;" >
 
-?>
-<div class="container-md" style="text-align: center;"><hr data-aos="zoom-out-up" data-aos-duration="1500"><h3 data-aos="fade-left">BEER</h3><hr data-aos="zoom-out-up" data-aos-duration="1500"></div>
-<main class="container">
-    <section class="card">
+<!-- Item -->
+<?php $result = $conn->query("SELECT * FROM BEER"); 
+while ($row = $result->fetch_assoc()):?>
+    <section class="card" data-aos="zoom-out-up" data-aos-duration="1500" style="overflow-y: hidden; overflow-x:hidden">
+        <img src="<?= $row['IMAGE']?>" alt="">
         <div>
-        <h3><?=$row['BRAND']?></h3>
-        </div>
+        <h3><?=$row['BRAND'] . " " . $row['LINE'] . "<br>" . $row['TYPE'] . "<br> (" . $row['SIZE'] . ")"?></h3>
+        <p>
+        <strike style="color:red">$<?=$row['OLD_PRICE']?></strike>  $<?=$row['PRICE']?><br>
+            
+        </p>
+        <a href="<?= $row['LINK']?>" class="btn btn-primary">View Item</a>
+    </div>
     </section>
-</main>
 <?php 
 endwhile; $result->free();
 ?>
-<div style="bottom: 0; width:100%; position: fixed;" data-aos="zoom-out-up"
-     data-aos-anchor-placement="top-bottom">
-    <?php include "./footer.php";?>
-    </div>
+
+</main>
+
+<?php include "./footer.php";?>
+
