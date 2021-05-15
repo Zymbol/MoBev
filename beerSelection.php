@@ -20,7 +20,7 @@ include "header.php";?>
 <!-- Item -->
 <?php $result = $conn->query("SELECT * FROM BEER"); 
 while ($row = $result->fetch_assoc()):?>
-    <section class="card" data-aos="zoom-out-up" data-aos-duration="1500" style="overflow-y: hidden; overflow-x:hidden">
+    <section class="card" data-aos="zoom-out-up" data-aos-duration="1500" style="overflow-y: hidden;">
         <img src="<?= $row['IMAGE']?>" alt="">
         <div>
         <h3><?=$row['BRAND'] . " " . $row['LINE'] . "<br>" . $row['TYPE'] . "<br> (" . $row['SIZE'] . ")"?></h3>
