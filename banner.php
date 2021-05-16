@@ -1,5 +1,5 @@
 <div data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom" data-aos-duration="3000" style="float: left;width:50%; margin:auto;" id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel"
+     data-aos-anchor-placement="top-bottom" data-aos-duration="3000" style="float: left; margin:auto;" id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel"
   data-interval="9000">
   <div class="carousel-inner">
     <div class="carousel-item active" >

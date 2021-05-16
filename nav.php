@@ -1,4 +1,4 @@
-<nav style="text-align: center;" class="navbar navbar-expand-lg navbar-light bg-light">
+<nav style="text-align: center; color: rgb(255,255,255);" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a  href="./home.php"><img class="logo"src="./images/logo.png">
     </a>
    
@@ -19,7 +19,7 @@
         <li class="nav-item"><a href="about.php">About</a></li>
         <li class="nav-item">
             <div class="dropdown">
-                <button class="loginbtn">My Account</button>
+                <button class="loginbtn" style="color: rgb(255,255,255);">My Account</button>
                     <div class="dropdown-content">
                         <a href="login.php">Customer Login</a>
                         <a href="signup.php">Register</a>                        
