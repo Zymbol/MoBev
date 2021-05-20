@@ -2,6 +2,7 @@
 <div class="container-md">
 <?php 
 session_start();
+$username = $_SESSION["name"];
 error_reporting(E_ALL);
 include "connect.php";?>
 <div data-aos="zoom-out-down"
@@ -17,14 +18,13 @@ include "header.php";?>
         
     <div class="container-lg">
                 <?php 
-            if (isset($_SESSION["user_id"])) {
-                echo '<h1 style="text-align: center;">Welcome, ' . $_SESSION["username"] . '!</h1>';
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+	echo '<h1>Welcome, ' . $_SESSION['username'] . '!</h1>';
 
-            }
-            else {
-                echo '<h1 style="text-align: center;">Welcome, Guest!</h1>';
-            }
-    ?>
+}
+else {
+	echo '<h1>Welcome, Guest!</h1>';
+}?>
         
     
 </div></h3>

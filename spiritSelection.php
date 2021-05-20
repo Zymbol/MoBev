@@ -1,26 +1,24 @@
-<div>
+<div class="container-md">
 <?php 
 error_reporting(E_ALL);
-include "connect.php";?>
-<div data-aos="zoom-out-down"
+include "connect.php";
+?>
+<div data-aos="fade-up"
      data-aos-anchor-placement="top-bottom">
+     <?php 
+     include "nav.php";?>
+     </div>
 <?php
-include "nav.php";?>
+include "header.php";?><main class="container" style="overflow-y: hidden;" >
+<div class="container-md" style="text-align: center;">
+    <hr data-aos="zoom-out-up" data-aos-duration="1500">
+        <h3 data-aos="fade-left">Our Spirits</h3>
+    <hr data-aos="zoom-out-up" data-aos-duration="1500">
 </div>
-<?php
-include "header.php";?><div class="container-md" style="text-align: center;">
-<hr data-aos="zoom-out-up" data-aos-duration="1500">
-    <h3 data-aos="fade-down-right">SPIRITS</h3>
-<hr data-aos="zoom-out-up" data-aos-duration="1500">
-</div>
-
-<!-- Main -->
-<main class="container" style="overflow-y: hidden;" >
-
 <!-- Item -->
 <?php $result = $conn->query("SELECT * FROM SPIRIT"); 
 while ($row = $result->fetch_assoc()):?>
-<section class="card" data-aos="fade-up-right" data-aos-duration="1500" style="overflow-y: hidden;">
+<section class="card"style="overflow-y: hidden;">
     <img src="<?= $row['IMAGE']?>" alt="">
     <div>
     <h3><?=$row['BRAND'] . " " . $row['LINE'] . "<br>" . $row['TYPE'] . "<br>"?></h3>

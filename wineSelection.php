@@ -4,18 +4,21 @@ error_reporting(E_ALL);
 include "connect.php";
 ?>
 <div data-aos="fade-up"
-     data-aos-anchor-placement="top-bottom"><?php include "nav.php";?></div>
+     data-aos-anchor-placement="top-bottom">
+     <?php 
+     include "nav2.php";?>
+     </div>
 <?php
 include "header.php";?><main class="container" style="overflow-y: hidden;" >
 <div class="container-md" style="text-align: center;">
     <hr data-aos="zoom-out-up" data-aos-duration="1500">
-        <h3 data-aos="fade-left">WINE LIST</h3>
+        <h3 data-aos="fade-left">Wine List</h3>
     <hr data-aos="zoom-out-up" data-aos-duration="1500">
 </div>
 <!-- Item -->
 <?php $result = $conn->query("SELECT * FROM WINE"); 
 while ($row = $result->fetch_assoc()):?>
-<section class="card" data-aos="fade-up-right" data-aos-duration="1500" style="overflow-y: hidden;">
+<section class="card2" data-aos-duration="1500" style="overflow-y: hidden;">
     <img src="<?= $row['IMAGE']?>" alt="">
     <div>
     <h3><?=$row['BRAND'] . " " . $row['LINE'] . "<br>" . $row['TYPE'] . "<br>"?></h3>

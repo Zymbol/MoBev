@@ -1,25 +1,25 @@
 <form method="POST">
-<div data-aos="zoom-out-down"
-     data-aos-anchor-placement="top-bottom" class="container-md">
+<div data-aos="zoom-out-right"
+     data-aos-anchor-placement="top-bottom">
 <?php 
 error_reporting(E_ALL);
 include "connect.php";
-include "nav.php";
+include "nav3.php";
 include "header.php";?>
-<div class="container-md" style="display: inline-block;">
-<div class="container-md" style="text-align: center;"><hr><h3>FIRESTONE WALKER 805<br>LIGHT HYBRID</h3><hr></div>
+<div >
+<div class="container-md" style="text-align: center;"><hr><h3>Firestone Walker 805</h3><hr></div>
 <?php $result = $conn->query("SELECT * FROM BEER WHERE BEER_SKU=1"); ?>
 <form method="POST">
 <?php while ($row = $result->fetch_assoc()): ?>    
-    <div class="container text-center" style="margin:auto">
+    <div class="container card3" style="margin:auto">
         <img style="margin: auto; width:auto" class="thumbnail" src=<?= $row['IMAGE'] ?>>
         <div class="card-body">
-            <p class="card-text text-center">
+        <p class="card-text" >
                 <strike style="color:red">$<?=$row['OLD_PRICE']?></strike> $<?=number_format($row['PRICE'], 2) ?><br>
                 <b>ABV: </b> <?=$row['ABV'] ?>%<br>
-                <?= $row['SIZE']?><br>                
-                </b> <?= $row['DESCRIPTION']?><br>                
-            </p>
+                <?= $row['SIZE']?><hr></p>                
+                </b> <p><?= $row['DESCRIPTION']?><br> </p>               
+            
             <div class="text-center">
                 <p>
                     <?= $row['STOCK']?> In Stock <br>

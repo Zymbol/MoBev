@@ -1,11 +1,11 @@
-<nav style="margin-top: 2rem; text-align: center; color: rgb(255,255,255);" class="neon neonText navbar navbar-expand-lg navbar-dark bg-dark">
+<nav style="margin-top: 2rem; text-align: center; color: rgb(255,255,255);" class="neon2 neonText2 navbar navbar-expand-lg navbar-dark bg-dark">
     <a  href="./home.php"><img class="logo"src="./images/logo.png">
     </a>
    
   
 
    
-<button class=" neon navbar-toggler" type="button" data-toggle="collapse" 
+<button class=" neon2 navbar-toggler" type="button" data-toggle="collapse" 
     data-target="#main_nav" aria-controls="#main_nav" aria-expanded="false" 
     aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,3 @@
         <li class="nav-item"><a href="login.php">Employee Login</a></li>
     </ul>  
 </nav>
-
-
-
-
