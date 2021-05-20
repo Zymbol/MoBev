@@ -17,9 +17,10 @@ if (isset($_POST) && !empty($_POST)) {
 		$password = htmlspecialchars($_POST['password']);
 		$hashed_password = password_hash($hashed_password, PASSWORD_DEFAULT);
 		
-		$stmt = $conn->prepare("INSERT INTO Users(username, password) VALUES(?, ?)");
+		$stmt = $conn->prepare("INSERT INTO CUSTOMER( USERNAME, PASSWORD) VALUES(?, ?)");
 		$stmt->bind_param("ss", $username, $hashed_password);
 		if ($stmt->execute()) {
+			$_SESSION['username']=$username;
 			$_SESSION['logged_in'] = true;
 			header("Location: home.php");
 		} else {

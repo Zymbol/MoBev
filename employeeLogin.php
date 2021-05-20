@@ -1,8 +1,8 @@
 <?php
 include "header.php";
 include "nav.php";
-$usernameErr = $password_error =  "";
-$username = $password = "";
+$eUsernameErr = $password_error =  "";
+$eUsername = $password = "";
 
 require_once "connect.php";
 
@@ -22,25 +22,25 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
 
 if (isset($_POST) && !empty($_POST)) {
     $valid = true;
-    $username = htmlspecialchars($_POST['username']);
+    $eUsername = htmlspecialchars($_POST['eusername']);
     $password = htmlspecialchars($_POST['password']);
 
     
 
-    if (empty($_POST["username"])) {
-        $username = "Username is required";
+    if (empty($_POST["eusername"])) {
+        $eUsername = "Username is required";
         $valid = false;
         $errors = true;
     } else {
-        $username = data_input($_POST["username"]);
+        $eUsername = data_input($_POST["eusername"]);
     
     }
 
-    if (!preg_match("/^[a-zA-Z-' ]*$/", $username)) {
-        $usernameErr = "Please only use letters for your username";
-        $valid = false;
-        $errors = true;
-    }
+    // if (!preg_match("/^[a-zA-Z-' ]*$/", $eUsername)) {
+    //     $eUsernameErr = "Please only use letters for your username";
+    //     $valid = false;
+    //     $errors = true;
+    // }
 
     if (empty($_POST["password"])) {
         $password = "Please enter a password";
@@ -58,13 +58,13 @@ if (isset($_POST) && !empty($_POST)) {
     }
     
     
-    $stmt = $conn->prepare("SELECT * FROM CUSTOMER WHERE USERNAME = ?");
-    $stmt->bind_param("s", $username);
+    $stmt = $conn->prepare("SELECT * FROM EMPLOYEE WHERE E_USERNAME = ?");
+    $stmt->bind_param("s", $eUsername);
     $stmt->execute();
     $result = $stmt->get_result();
     if ($result->num_rows == 1) {
 		$row = $result -> fetch_all(MYSQLI_ASSOC);
-        $_SESSION['username']=$username;
+        $_SESSION['eusername']=$eUsername;
 		// echo $password;
 		// echo $row[0]['password'];
 		// if (password_verify($password, $row[0]['password'])){
@@ -75,7 +75,7 @@ if (isset($_POST) && !empty($_POST)) {
     }
     $result->free();
     }
-
+    
 //var_dump($_SESSION);
 
 ?>
@@ -84,8 +84,8 @@ if (isset($_POST) && !empty($_POST)) {
     <h1>Login</h1>
 </nav>
 <form class="signup" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <input type="text" name="username" placeholder="Username" <?php if($errors == true){echo 'style="border:1px solid red; "'; }?>/>
-    <span class="error"><?php echo $usernameErr;?></span>
+    <input type="text" name="eusername" placeholder="Username" <?php if($errors == true){echo 'style="border:1px solid red; "'; }?>/>
+    <span class="error"><?php echo $eUsernameErr;?></span>
     <br><br>
     <input type="password" name="password" placeholder="Password" <?php if($error == true){echo 'style="border:1px solid red; "'; }?>/>
     <span class="error"><?php echo $password_error;?></span>
