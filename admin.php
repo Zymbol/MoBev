@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <?php
 
 // Establish connection
@@ -28,18 +29,32 @@ if (isset($_POST) && !empty($_POST)) {
 ?>
 
 <style>
-	input[type="text"], input[type="number"], select, textarea {
+	input[type="text"], input[type="number"], select{
 		width: 100%;
+		color: #CFD8DC;
 	}
+	textarea {
+		width: 151%;
+	}
+	label, a {
+		color: #CFD8DC;
+	}
+	td {
+		padding-right: 3em;
+	}
+	
 </style>
+<div class="container-md">
+<hr>
+<h3 style="text-align: center;">Product Admin Page</h3>
+<hr>
 
-<h1>Product Admin Page</h1>
-
-<table>
-	<form method="get">
-		<tr>
-			<td><label for="id">Wines</label></td>
-			<td><select name="id" onchange="this.form.submit();">
+<table style="margin-top: 2rem; padding:2rem" class="card center-text" >
+	<form method="get" >
+		<div class="container-md">
+		<tr style="margin-top: 2rem;">
+			<td><label for="id">Wine</label></td>
+			<td><select style="margin-top:2rem; color: #CFD8DC;" class="form-select form-select-lg mb-3 card" name="id" onchange="this.form.submit();">
 					<option value="0" 
 					<?php 
 					if ($id == 0) 
@@ -49,32 +64,31 @@ if (isset($_POST) && !empty($_POST)) {
 					<?php endforeach; ?>
 				</select></td>
 		</tr>
+		</div>
 	</form>
 	<form method="post">
-		<input type="hidden" name="id" value="<?= (isset($item) ? $item['id'] : ""); ?>">
-		<tr>
-			<td><label for="name">Name</label></td>
-			<td><input type="text" name="name" value="<?= (isset($item) ? $item['name'] : ""); ?>"></td>
-		</tr>
+		<input type="hidden" name="id" value="<?= (isset($item) ? $item['WINE_ID'] : ""); ?>">
 		<tr>
 			<td><label for="price">Price</label></td>
-			<td><input type="text" name="price" value="<?= (isset($item) ? $item['price'] : ""); ?>"></td>
+			<td><input style="margin-top:2rem; color: #CFD8DC;" class="form-select form-select-lg mb-3 card" type="text" name="price" value="<?= (isset($item) ? "$". $item['PRICE'] : ""); ?>"></td>
 		</tr>
 		<tr>
-			<td><label for="rating">Rating</label></td>
-			<td><input type="number" name="rating" value="<?= (isset($item) ? $item['rating'] : ""); ?>" min="0" max="10"></td>
+			<td><label for="href">Link</label></td>
+			<td><a style="margin-top:2rem; color: #CFD8DC;" class="form-select form-select-lg mb-3 card" href="<?=(isset($item) ? $item['LINK'] : "")?>">Product Page</a></td>
+			<!-- <td><input type="text" name="href" value="<?= (isset($item) ? $item['LINK'] : ""); ?>" min="0" max="10"></td> -->
 		</tr>
 		<tr>
-			<td><label for="stock">Stock</label></td>
-			<td><select name="stock">
+			<td><label for="stock">Quantity</label></td>
+			<td><select style="margin-top:2rem; color: #CFD8DC;" class="form-select form-select-lg mb-3 card" name="stock">
 					<option>Select a Value</option>
-					<option value="0" <?php if (isset($item) && $item['stock'] == 0) print "selected"; ?>>Out of Stock</option>
-					<option value="1" <?php if (isset($item) && $item['stock'] == 1) print "selected"; ?>>In Stock</option>
+					<option value="0" <?php if (isset($item) && $item['STOCK'] == 0) print "selected"; ?>>Out of Stock</option>
+					<option aria-valuemin="1" <?php if (isset($item) && $item['STOCK'] >= 1) print "selected"; ?>><?= $row['STOCK']?> in Stock</option>
 				</select></td>
 		</tr>
 		<tr>
 			<td><label for="description">Description</label></td>
-			<td><textarea name="description"><?= (isset($item) ? $item['description'] : ""); ?></textarea></td>
+			<td style="margin-left:3em"><textarea style="width: 151%; overflow:hidden; margin-top:2rem; margin-bottom:2rem; color: #CFD8DC;" class="form-control form-select form-select-lg mb-3 card"
+			rows="5" name="description"><?= (isset($item) ? $item['DESCRIPTION'] : ""); ?></textarea></td>
 		</tr>
 		<tr>
 			<td></td>
@@ -90,6 +104,8 @@ if (isset($_POST) && !empty($_POST)) {
 		</tr>
 	</form>
 </table>
+
 <footer>
 	<?php include "./footer.php";?>
 </footer>
+</div>
