@@ -35,7 +35,7 @@
   color: #fff;
   text-shadow:
     0 0 7px #fff,
-    0 0 42px #8f220f
+    0 0 42px #d10303
   }
 .neon2 {
   animation: pulsate2 1.5s infinite alternate;  
@@ -44,8 +44,8 @@
   padding: 0.4em;
   box-shadow: 0 0 .2rem #fff,
   0 0 .2rem #fff,
-  0 0 2rem #8f220f,
-  inset 0 0 1.3rem #8f220f; 
+  0 0 2rem #d10303,
+  inset 0 0 1.3rem #d10303; 
 }
 .neonText3 {
   color: #fff;
@@ -94,8 +94,8 @@
         0 0 4px #fff,
         0 0 11px #fff,
         0 0 19px #fff,
-        0 0 40px #8f220f,
-        0 0 80px #8f220f;      
+        0 0 40px #d10303,
+        0 0 80px #d10303;      
     }
     
   0% {
@@ -104,8 +104,8 @@
     0 0 2px #fff,
     0 0 4px #fff,
     0 0 6px #fff,
-    0 0 10px #8f220f,
-    0 0 45px #8f220f;   
+    0 0 10px #d10303,
+    0 0 45px #d10303;   
   } }
   @keyframes pulsate3 {
     
@@ -135,6 +135,16 @@
   }
   /* After animation */
   [data-aos="my-animation"].aos-animate {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+  [data-aos="my-animation2"] {
+    transform: rotate(-180deg) scale(0.1);
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+  /* After animation */
+  [data-aos="my-animation2"].aos-animate {
     transform: rotate(0) scale(1);
     opacity: 1;
   }
@@ -209,10 +219,10 @@
     margin-bottom: 2rem;
     box-shadow: 0 0 .2rem #fff,
     0 0 .2rem #fff,
-    0 0 1rem #8f220f,
-    0 0 0.8rem #8f220f,
-    0 0 2.8rem #8f220f,
-    inset 0 0 1.3rem #8f220f;
+    0 0 1rem #d10303,
+    0 0 0.8rem #d10303,
+    0 0 2.8rem #d10303,
+    inset 0 0 1.3rem #d10303;
   }
   .card2 h3 {
     margin-bottom: 2rem;

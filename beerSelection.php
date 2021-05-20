@@ -12,7 +12,7 @@ include "connect.php";
 include "header.php";?><main class="container" style="overflow-y: hidden;" >
 <div class="container-md" style="text-align: center;">
     <hr data-aos="zoom-out-up" data-aos-duration="1500">
-        <h3 data-aos="my-animation" data-aos-duration="2500">Beer & Hard Selzers</h3>
+        <h3 data-aos="my-animation" data-aos-duration="2500">Beer & Hard Seltzers</h3>
     <hr data-aos="zoom-out-up" data-aos-duration="1500">
 </div>
 <!-- Item -->

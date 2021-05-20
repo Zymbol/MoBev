@@ -1,32 +1,42 @@
-<form method="POST">
 <div class="container-md">
+<form method="POST">
 <?php 
 error_reporting(E_ALL);
 include "connect.php";
 include "nav.php";
 include "header.php";?>
-<div class="container-md" style="display: inline-block;">
-<div class="container-md" style="text-align: center;"><hr><h3>Bookers Limited Edition Rye Whiskey</h3><hr></div>
+
+<div data-aos-anchor-placement="top-bottom" class="container-md" style="text-align: center;">
+     <hr data-aos="my-animation" 
+     data-aos-duration="2500">
+     <h3 data-aos="flip-up" 
+     data-aos-duration="2500">Bookers Limited Edition<br>Rye Whiskey</h3><hr data-aos="my-animation2" 
+     data-aos-duration="2500"></div>
 <?php $result = $conn->query("SELECT * FROM SPIRIT WHERE SPIRIT_SKU=3"); ?>
 <form method="POST">
 <?php while ($row = $result->fetch_assoc()): ?>    
-    <div class="container text-center" style="margin:auto">
+    <div class="container card" style="margin:auto">
         <img style="margin: auto; width:auto" class="thumbnail" src=<?= $row['IMAGE'] ?>>
         <div class="card-body">
-            <!-- <h3 class="card-title text-center"><?=$row['BRAND']. " ". $row['LINE'] . " " . $row['TYPE']?></h3> -->
-            <p class="card-text text-center">
-                <strike style="color:red">$400.00</strike> $<?=number_format($row['PRICE'], 2) ?><br>
-                <b>Proof: </b> <?=$row['PROOF'] ?><br><br>                
+        <p class="card-text">
+                <strike style="color:red">$<?=$row['OLD_PRICE']?></strike> $<?=number_format($row['PRICE'], 2) ?><br>
+                <b>Proof: </b> <?=$row['PROOF'] ?></p><hr>
+                <p>               
                 </b> <?= $row['DESCRIPTION']?><br>                
-            </p>
+            </p>               
+            
             <div class="text-center">
+                <p>
+                    <?= $row['STOCK']?> In Stock <br>
+                </p>
                 <a href="#!" class="btn btn-primary">Add to Cart</a>
             </div>
         </div>         
     </div>
         <!-- </div> -->
-    </div>
+    
     </form>
+</div>
 <?php endwhile;
     $result->free();
-    include "./footer.php"?>
+    include "./footer.php";?>
